@@ -167,6 +167,3 @@ To analyze pollution exposure, dominant pollutants, and short-term AQI behavior.
 Course: Data Pre-Processing and Business Analytics
 
 ---
-
-## ⭐ If you found this project useful
-Feel free to star this repository.
