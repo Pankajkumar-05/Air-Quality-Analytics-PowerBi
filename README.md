@@ -20,6 +20,49 @@ The project is developed using Microsoft Power BI, transforming large-scale air 
 
 ---
 
+## 🔄 Data Analysis Workflow
+
+Data Collection → Data Cleaning → Data Modeling → Visualization → Insights Generation
+
+---
+
+## 🧹 Data Cleaning and Preparation
+
+Before building the dashboard, several data preparation steps were performed to ensure accuracy and consistency.
+
+### 1. Handling Missing Values
+- Removed rows with missing or invalid AQI values.
+- Checked pollutant and location fields for null entries.
+- Ensured essential columns such as City and AQI contained valid data.
+
+### 2. Data Type Correction
+- Converted AQI and numerical columns into proper numeric format.
+- Ensured Year, Month, and Day fields were correctly formatted for time-based analysis.
+- Verified categorical fields such as AQI Status and Prominent Pollutant.
+
+### 3. Standardization of Text Fields
+- Standardized city and state names to avoid duplicate categories.
+- Removed extra spaces and inconsistent naming formats.
+
+### 4. Date Feature Creation
+- Created Year, Month, and Day hierarchy for trend analysis.
+- Enabled time-based filtering using slicers.
+
+### 5. Derived Calculations
+- Created calculated measures using DAX including:
+  - Average AQI
+  - Best AQI City
+  - Worst AQI City
+  - High-Risk Cities Count
+  - Safe Cities Count
+- Derived a Health Impact Score based on AQI ranges to represent pollution-related health risk.
+
+### 6. Data Optimization
+- Used aggregated measures instead of raw columns for better performance.
+- Applied Top-N filtering to improve visualization clarity.
+
+---
+
 ## 📌 Dashboard Pages
 
 ### 1️⃣ Air Quality Overview
@@ -69,6 +112,18 @@ To analyze pollution exposure, dominant pollutants, and short-term AQI behavior.
 
 ---
 
+## 📊 KPI Definitions
+
+- **Average AQI:** Represents overall pollution severity.
+- **Best AQI City:** City with lowest average AQI.
+- **Worst AQI City:** City with highest average AQI.
+- **Poor/Severe AQI %:** Share of critical air quality observations.
+- **Average Health Impact Score:** Derived indicator representing health risk level.
+- **High-Risk Cities Count:** Cities where AQI exceeds 200.
+- **Safe Cities Count:** Cities where AQI is 100 or below.
+
+---
+
 ## 📈 Key Insights
 
 - PM2.5 appears as the most dominant pollutant across cities.
@@ -88,23 +143,10 @@ To analyze pollution exposure, dominant pollutants, and short-term AQI behavior.
 
 ---
 
-## 📊 KPI Definitions
-
-- **Average AQI:** Represents overall pollution severity.
-- **Best AQI City:** City with lowest average AQI.
-- **Worst AQI City:** City with highest average AQI.
-- **Poor/Severe AQI %:** Share of critical air quality observations.
-- **Average Health Impact Score:** Derived indicator representing health risk level.
-- **High-Risk Cities Count:** Cities where AQI exceeds 200.
-- **Safe Cities Count:** Cities where AQI is 100 or below.
-
----
-
 ## ⚠ Challenges Faced
 
 - Large dataset handling and performance optimization
 - Absence of direct health impact data
-- Map visualization dependency on internet connectivity
 - Overcrowded visuals during initial analysis
 
 ---
@@ -117,6 +159,7 @@ To analyze pollution exposure, dominant pollutants, and short-term AQI behavior.
 - Separate slicers for daily AQI analysis
 
 ---
+
 
 ## 👤 Author
 
